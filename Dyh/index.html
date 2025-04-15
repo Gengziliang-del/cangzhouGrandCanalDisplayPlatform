@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>沧州大运河展示系统</title>
+    <link rel="stylesheet" href="styles/UI.css" />
+    <link rel = "stylesheet" href = "styles/TopNav.css">
+    <link rel = "stylesheet" href="styles/ToolBar.css">
+    <link rel = "stylesheet" href = "styles/LayerPanel.css">
+    <link rel = "stylesheet" href = "styles/StatusBar.css">
+  </head>
+  <body>
+    <!-- 顶部导航栏 -->
+    <nav class="top-nav">
+      <div class="logo">运河智境趣拾光</div>
+    cangzhouGrandCanalDisplayPlatform
+      <div class="nav-items">
+        <a href="#" class="nav-item" data-menu="model1">模块一</a>
+        <a href="#" class="nav-item" data-menu="model2">模块二</a>
+        <a href="#" class="nav-item" data-menu="model3">模块三</a>
+        <a href="#" class="nav-item" data-menu="model4">待定</a>
+      </div>
+    </nav>
+    <!-- 小尾巴按钮，默认处于隐藏状态 -->
+    <div class="nav-toggle-bubble hidden" id="navToggleBubble" title="展开导航栏">
+      &#9776;
+    </div>
+
+    <!-- 工具栏 -->
+    <div class="toolbar">
+      <div class="tab-group">
+        <button class="tab-item tooltip" data-menu="view">
+          <i class="icon view-icon"></i>
+          <span class="tooltip-text">视图</span>
+<!--          视图-->
+        </button>
+        <span class="tooltip-text">视图</span>
+        <button class="tab-item tooltip" data-menu="measure">
+          <i class="icon measure-icon"></i>
+          <span class="tooltip-text">测量</span>
+<!--          测量-->
+        </button>
+        <button class="tab-item tooltip" data-menu="analysis">
+          <i class="icon analysis-icon"></i>
+          <span class="tooltip-text">分析</span>
+<!--          分析-->
+        </button>
+      </div>
+    </div>
+
+    <!-- 左侧图层面板 -->
+    <div class="layer-panel">
+      <button class="add-layer-btn">
+        <i class="icon plus-icon"></i>
+        图层
+      </button>
+      <div class="layer-menu">
+        <div class="layer-item">
+          <span>地形图层</span>
+          <label class="switch">
+            <input type="checkbox" checked />
+            <span class="slider"></span>
+          </label>
+        </div>
+        <div class="layer-item">
+          <span>建筑图层</span>
+          <label class="switch">
+            <input type="checkbox" />
+            <span class="slider"></span>
+          </label>
+        </div>
+        <div class="layer-item">
+          <span>其他图层</span>
+          <label class="switch">
+            <input type="checkbox" />
+            <span class="slider"></span>
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <!-- 主视图区域 -->
+    <div id="cesiumContainer"></div>
+
+    <!-- 底部状态栏 -->
+    <div class="status-bar">
+      <div class="status-item">
+        <i class="icon location-icon"></i>
+        <span class="coordinates">经度: 116.8452° 纬度: 38.3047°</span>
+      </div>
+      <div class="status-item">
+        <i class="icon eye-icon"></i>
+        <span class="view-height">视高: 1000m</span>
+      </div>
+      <div class="status-item">
+        <i class="icon scale-icon"></i>
+        <span class="scale">1:10000</span>
+      </div>
+    </div>
+
+    <!-- 工具条菜单面板 -->
+    <div class="toolMenu-panel view-menu">
+      <div class="menu-item">2D视图</div>
+      <div class="menu-item">3D视图</div>
+      <div class="menu-item">俯视图</div>
+      <div class = "menu-item"></div>
+    </div>
+
+    <!-- 其他工具条弹出菜单面板 -->
+    <div class="toolMenu-panel measure-menu">
+      <div class="menu-item">功能1</div>
+      <div class="menu-item">功能2</div>
+      <div class="menu-item">功能3</div>
+      <div class = "menu-item"></div>
+    </div>
+
+
+<!--顶部导航栏弹出菜单-->
+    <div class="topMenu-panel model1-menu">
+      <div class="menu-item" id = “topJump”>功能1</div>
+      <div class="menu-item">功能2</div>
+      <div class="menu-item">功能3</div>
+      <div class = "menu-item"></div>
+    </div>
+
+    <div class="topMenu-panel model2-menu">
+      <div class="menu-item">功能1</div>
+      <hr style="color: grey">
+      <div class="menu-item">功能2</div>
+      <div class="menu-item">功能3</div>
+      <div class = "menu-item"></div>
+    </div>
+
+    <div class="topMenu-panel model3-menu">
+      <div class="menu-item">功能1</div>
+      <hr style="color: grey">
+      <div class="menu-item">功能2</div>
+      <div class="menu-item">功能3</div>
+      <div class = "menu-item"></div>
+    </div>
+
+<script src = "scripts/jquery-3.7.1.slim.min.js"></script>
+    <script src="scripts/UI.js" type="module"></script>
+    <!--    js脚本-->
+    <script src = '../Build/Cesium/Cesium.js'></script>
+    <!--    样式表-->
+    <link rel = "stylesheet" href = "../Build/Cesium/Widgets/widgets.css">
+  <script src = "scripts/main.js"></script>
+  </body>
+</html>

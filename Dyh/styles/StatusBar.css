@@ -1,0 +1,27 @@
+/* 底部状态栏 */
+.status-bar {
+    position: fixed;
+    /*right: 20px;*/
+    /*button : 20px;*/
+    width:100%;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.75);
+    /*border-radius: 25px;*/
+    /*可以让底部状态栏变细*/
+    padding: 5px 20px;
+    display: flex;
+    /*gap: 20px;*/
+    z-index: 100;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    /*    内部元素居中*/
+    justify-content: center;
+    gap:30px;
+}
+
+.status-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #666;
+    font-size: 14px;
+}

@@ -1,0 +1,109 @@
+/* 工具条 */
+.toolbar {
+    position: fixed;
+    top: 100px;
+    left: 130px;
+    transform: translateX(-50%);
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 25px;
+    padding: 5px;
+    z-index: 100;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+
+/*工具条托盘*/
+.tab-group {
+    display: flex;
+    gap: 10px;
+}
+
+/*工具条元素*/
+.tab-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5px 20px;
+    border: none;
+    background: transparent;
+    color: #666;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 15px;
+}
+
+.tab-item:hover {
+    background: rgba(140, 20, 20, 0.1);
+    color: #8b1515;
+}
+
+/*======================================*/
+/* 工具条菜单面板 */
+.toolMenu-panel {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 15px;
+    padding: 10px;
+    display: none;
+    z-index: 101;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+/*---------------------------------------------*/
+
+/*工具条的点击响应*/
+.toolMenu-panel.active {
+    display: block;
+    animation: fadeIn 0.3s ease-out;
+}
+/* 动画效果 */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+/*工具栏点击提示文字*/
+/*======================================*/
+.tooltip {
+    position: relative;
+    /*display: inline-block;*/
+    cursor: pointer;
+}
+
+.tooltip-text {
+    visibility: hidden;
+    width: 60px;
+    background-color: #7d1818;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 6px 8px;
+    position: absolute;
+    z-index: 1;
+    top: 125%; /* 调整 tooltip 出现位置 */
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    font-size: 12px;
+    white-space: nowrap;
+}
+/*三角箭头标记*/
+.tooltip-text::after {
+    content: "";
+    position: absolute;
+    bottom: 100%; /* 箭头位置 */
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent #7d1818 transparent;  /* 上边为透明，下边为 tooltip 背景色 */
+}
+/*鼠标悬停时*/
+.tooltip:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+}
+/*---------------------------------------------*/
+/*打开菜单取消气泡*/
+.toolbar.menu-open .tooltip-text {
+    display: none;
+}

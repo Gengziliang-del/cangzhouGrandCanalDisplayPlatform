@@ -1,53 +1,8 @@
 // 工具栏菜单控制
-const toolbarButtons = document.querySelectorAll('.tab-item');
-const menuPanels = document.querySelectorAll('.toolMenu-panel');
-
-toolbarButtons.forEach(button => {
-    button.addEventListener('click', (e) => {
-        let  menuType = button.dataset.menu;
-        console.log(menuType);
-        //根据菜单名称确认选择的菜单（menutype插入）
-        const targetMenu = document.querySelector(`.${menuType}-menu`);
-
-        // 关闭其他菜单
-        menuPanels.forEach(panel => {
-            if (panel !== targetMenu) {
-                panel.classList.remove('active');
-            }
-        });
-
-        // 切换目标菜单
-        if (targetMenu) {
-            targetMenu.classList.toggle('active');
-            if (targetMenu.classList.contains('active')) {
-                const buttonRect = button.getBoundingClientRect();
-                targetMenu.style.top = `${buttonRect.bottom + 10}px`;
-                targetMenu.style.left = `${buttonRect.left}px`;
-            }
-        }
-
-        menuPanels.forEach(panel => {
-            const items = panel.querySelectorAll('.menu-item');
-            items.forEach(item => {
-                item.addEventListener('click', () => {
-                    panel.classList.remove('active');
-                });
-            });
-        });
-
-        const toolbar = document.querySelector('.toolbar');
-        // toolbar.classList.remove('menu-open');
-        toolbar.classList.add('menu-open');
-    });
-});
-
-//////////////////////////////////////////待定!!
-
-// 工具栏菜单控制
-const topbarButtons = document.querySelectorAll('.nav-item');
+const topBarButtons = document.querySelectorAll('.nav-item');
 const topMenuPanels = document.querySelectorAll('.topMenu-panel');
 
-topbarButtons.forEach(button => {
+topBarButtons.forEach(button => {
     button.addEventListener('click', (e) => {
         let  menuType = button.dataset.menu;
         console.log(menuType);
@@ -90,9 +45,11 @@ topbarButtons.forEach(button => {
 // 图层控制
 const addLayerBtn = document.querySelector('.add-layer-btn');
 const layerMenu = document.querySelector('.layer-menu');
+const layerPanel = document.querySelector('.layer-panel');
 
 addLayerBtn.addEventListener('click', () => {
     layerMenu.classList.toggle('active');
+    layerPanel.classList.toggle('active');
 });
 
 // 图层开关控制
@@ -106,6 +63,8 @@ layerSwitches.forEach(switch_ => {
     });
 });
 
+
+///////////////////////////////////////////////////////////////////////////
 // 状态栏信息更新
 const coordinatesElement = document.querySelector('.coordinates');
 const viewHeightElement = document.querySelector('.view-height');
@@ -130,61 +89,33 @@ viewer.scene.postRender.addEventListener(() => {
     const scale = Math.round(height / 100) * 100;
     scaleElement.textContent = `1:${scale}`;
 });
+//////////////////////////////////////////////////////////////////////////////////
+
 
 // 点击页面空白处关闭菜单
 document.addEventListener('click', (e) => {
-    if (!e.target.closest('.toolbar') && !e.target.closest('.toolMenu-panel')) {
-        menuPanels.forEach(panel => panel.classList.remove('active'));
-        //恢复气泡
-        const toolbar = document.querySelector('.toolbar');
-        toolbar.classList.remove('menu-open');
-    }
     // 关闭顶部导航栏弹出菜单
-    if (!e.target.closest('.topMenu-panel') && !e.target.closest('.top-nav')) {
-        const topMenuPanel = document.querySelector('.topMenu-panel');
-        if (topMenuPanel) {
-            topMenuPanel.classList.remove('active');
+    document.addEventListener('click', (e) => {
+        // 如果点击的目标不在任一菜单或者导航栏中
+        if (!e.target.closest('.topMenu-panel') && !e.target.closest('.top-nav')) {
+            // 遍历所有菜单并移除 active 类
+            document.querySelectorAll('.topMenu-panel').forEach(panel => {
+                panel.classList.remove('active');
+            });
         }
-    }
+    });
+
 //点击工具条（含子内容）
     if (e.target.closest('.toolMenu-panel')) {
-        // alert("dianji");
-        //恢复气泡
-        const toolbar = document.querySelector('.toolbar');
-        toolbar.classList.remove('menu-open');
+        // // alert("dianji");
+        // //恢复气泡
+        // const toolbar = document.querySelector('.toolbar');
+        // toolbar.classList.remove('menu-open');
         //关闭菜单
         layerMenu.classList.remove('active');
     }
 });
 
-// 视图控制菜单响应
-const viewMenuItems = document.querySelectorAll('.view-menu .menu-item');
-
-viewMenuItems.forEach(item => {
-    item.addEventListener('click', () => {
-        const viewType = item.textContent;
-        switch(viewType) {
-            case '2D视图':
-                viewer.scene.morphTo2D(1);
-                break;
-            case '3D视图':
-                viewer.scene.morphTo3D(1);
-                break;
-            case '俯视图':
-                viewer.camera.setView({
-                    destination: Cesium.Cartesian3.fromDegrees(
-                        116.8452, 38.3047, 50000
-                    ),
-                    orientation: {
-                        heading: 0,
-                        pitch: -Cesium.Math.PI_OVER_TWO,
-                        roll: 0
-                    }
-                });
-                break;
-        }
-    });
-});
 
 
 /////////////////////////收起导航栏///////////////////////////////////
@@ -223,9 +154,3 @@ bubble.addEventListener('click', function (event) {
     }, 300);  // 与 CSS transition 的时间保持一致
 });
 /////////////////////////////////////////////////////////////////////
-
-
-///////////////////////////
-// 假设 targetMenu 是你打开的工具条菜单
-
-////////////////////////////

@@ -2,8 +2,9 @@
 .toolbar {
     position: fixed;
     top: 100px;
-    left: 130px;
-    transform: translateX(-50%);
+    left: 25px;
+    /*transform: translateX(-50%);*/
+    transform: none;
     background: rgba(255, 255, 255, 0.95);
     border-radius: 25px;
     padding: 5px;

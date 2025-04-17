@@ -75,16 +75,16 @@ viewer.scene.globe.enableLighting = true;
 viewer.scene.postRender.addEventListener(() => {
     const camera = viewer.camera;
     const position = camera.positionCartographic;
-    
+
     // 更新经纬度
     const longitude = Cesium.Math.toDegrees(position.longitude).toFixed(4);
     const latitude = Cesium.Math.toDegrees(position.latitude).toFixed(4);
     coordinatesElement.textContent = `经度: ${longitude}° 纬度: ${latitude}°`;
-    
+
     // 更新视高
     const height = position.height.toFixed(0);
     viewHeightElement.textContent = `视高: ${height}m`;
-    
+
     // 更新比例尺（简化计算）
     const scale = Math.round(height / 100) * 100;
     scaleElement.textContent = `1:${scale}`;
@@ -107,10 +107,6 @@ document.addEventListener('click', (e) => {
 
 //点击工具条（含子内容）
     if (e.target.closest('.toolMenu-panel')) {
-        // // alert("dianji");
-        // //恢复气泡
-        // const toolbar = document.querySelector('.toolbar');
-        // toolbar.classList.remove('menu-open');
         //关闭菜单
         layerMenu.classList.remove('active');
     }
@@ -154,3 +150,74 @@ bubble.addEventListener('click', function (event) {
     }, 300);  // 与 CSS transition 的时间保持一致
 });
 /////////////////////////////////////////////////////////////////////
+
+
+///////////////////////////拖动工具条/////////////////
+;(function() {
+    const toolbar = document.querySelector('.toolbar');
+    let isDragging = false;
+    let startX, startY, origX, origY;
+    // 拖动范围上下限
+    let minX = 0, minY = 0, maxX, maxY;
+
+    // 计算当前可拖动的边界
+    function updateBounds() {
+        const vw = window.innerWidth;
+        const vh = window.innerHeight;
+        const tw = toolbar.offsetWidth;
+        const th = toolbar.offsetHeight;
+        minX = 0;
+        minY = 0;
+        maxX = vw - tw;
+        maxY = vh - th;
+        // 如果此时 toolbar 已经超出边界，就立即修正位置
+        const curLeft = toolbar.offsetLeft;
+        const curTop  = toolbar.offsetTop;
+        if (curLeft < minX) toolbar.style.left = minX + 'px';
+        if (curLeft > maxX) toolbar.style.left = maxX + 'px';
+        if (curTop  < minY) toolbar.style.top  = minY + 'px';
+        if (curTop  > maxY) toolbar.style.top  = maxY + 'px';
+    }
+
+    // 初始化边界
+    updateBounds();
+    // 监听窗口尺寸变更
+    window.addEventListener('resize', updateBounds);
+
+    toolbar.style.cursor = 'move';
+    toolbar.addEventListener('mousedown', e => {
+        // 只点在 toolbar 背景（非按钮区域）才拖拽
+        if (e.target.closest('.tab-item')) return;
+
+        isDragging = true;
+        startX = e.clientX;
+        startY = e.clientY;
+        origX = toolbar.offsetLeft;
+        origY = toolbar.offsetTop;
+        toolbar.style.transition = 'none';
+
+        document.addEventListener('mousemove', onMouseMove);
+        document.addEventListener('mouseup',   onMouseUp);
+    });
+
+    function onMouseMove(e) {
+        if (!isDragging) return;
+        // 计算新的位置
+        let newX = origX + (e.clientX - startX);
+        let newY = origY + (e.clientY - startY);
+        // 限制在边界内
+        newX = Math.min(maxX, Math.max(minX, newX));
+        newY = Math.min(maxY, Math.max(minY, newY));
+        toolbar.style.left = newX + 'px';
+        toolbar.style.top  = newY + 'px';
+    }
+
+    function onMouseUp() {
+        if (!isDragging) return;
+        isDragging = false;
+        toolbar.style.transition = '';
+        document.removeEventListener('mousemove', onMouseMove);
+        document.removeEventListener('mouseup',   onMouseUp);
+    }
+})();
+//////////////////////////////////

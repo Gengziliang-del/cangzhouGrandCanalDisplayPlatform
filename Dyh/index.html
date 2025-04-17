@@ -121,8 +121,13 @@
 <!-- 悬浮窗：默认隐藏 -->
 <div class="floating-panel analysisHidden" id="analysis-panel">
     <div class="panel-header">
+        <i class="icon analysis-icon"></i>
         <span class="panel-title">分析面板</span>
         <button class="close-btn" onclick="closePanel()">✕</button>
+    </div>
+    <hr style = 'border: #751917 solid 1px'>
+    <div class = "panel-illustrate">
+        <span>选择工具用于分析操作</span>
     </div>
     <div class="panel-content">
         <div class="module">模块 1</div>
@@ -130,12 +135,11 @@
         <div class="module">模块 3</div>
     </div>
 </div>
-
 </body>
 
 <!--页面交互设计-->
 <script src="scripts/UI.js" type="module"></script>
-<script type="text/javascript" src="./scripts/jquery-3.7.1.slim.min.js"></script>
+<script type="text/javascript" src="library/jquery-3.7.1.slim.min.js"></script>
 <!--功能设计-->
 
 <!--    js脚本-->

@@ -1,0 +1,78 @@
+/* 小屏幕兼容 响应式设计 */
+@media (max-width: 768px) {
+    /*=============导航栏==================================*/
+    /*顶部导航栏高度和边距*/
+    .top-nav {
+        height: 50px;
+        padding: 0 10px 0 0px;
+    }
+
+    /*标题字体大小*/
+    .logo {
+        width: 250px;
+        height:50px;
+    }
+
+    /*导航栏元素组间隔*/
+    .nav-items {
+        gap: 10px;
+    }
+
+    /*导航栏元素字体和边距*/
+    .nav-item {
+        font-size: 14px;
+        padding: 6px 12px;
+    }
+
+
+    /*==================状态栏========================*/
+    /*小屏幕-底部状态栏*/
+    .status-bar {
+        /*flex-direction: column;*/
+        gap: 10px;
+        /*right: 10px;*/
+        /*bottom: 10px;*/
+    }
+
+    /*=====================图层======================*/
+    /*改变图层面板左边距*/
+    .layer-panel {
+        left: 10px;
+        /*bottom: 0px;*/
+    }
+    /*改变添加图层按钮大小*/
+    .add-layer-btn {
+        padding: 5px 15px;
+    }
+
+
+    /*====================工具条=====================*/
+    /*工具条位置和大小*/
+    .toolbar {
+        top: 60px;
+        padding: 5px;
+        left:50px;
+    }
+
+    /*改变工具条元素边距大小*/
+    .tab-item {
+        padding: 8px 6px;
+    }
+
+    /*工具条变为纵向*/
+    .tab-group{
+        flex-direction: column; /* ← 改这句，原来是 row（默认） 工具条变为纵向*/
+    }
+
+/*    工具条提示文字位置*/
+    .tooltip-text{
+        top: 15%; /* 调整 tooltip 出现位置 */
+        left: 200%;
+    }
+/*    工具条提示文字三角符号*/
+    .tooltip-text::after {
+        bottom:25%;
+        left: -7%;
+        border-color: transparent #7d1818 transparent  transparent  ;
+    }
+}

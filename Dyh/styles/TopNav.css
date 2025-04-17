@@ -4,7 +4,7 @@
     top: 0;
     left: 0;
     right: 0;
-    height: 80px;
+    height: 100px;
     background: linear-gradient(135deg, rgba(140, 20, 20, 0.95), rgba(90, 15, 15, 0.95));
     display: flex;
     justify-content: space-between;
@@ -16,14 +16,14 @@
 }
 /*顶部导航栏左侧logo样式*/
 .logo {
-    width:400px;
-    height: 80px;
+    width:500px;
+    height: 100px;
 }
 
 /*顶部导航栏收起*/
 /* 隐藏导航栏时的样式 */
 .top-nav.hidden {
-    top: -80px;
+    top: -100px;
 }
 
 /*顶部导航栏右侧元素托盘样式*/
@@ -35,7 +35,7 @@
 .nav-item {
     color: rgba(255, 255, 255, 0.8);
     text-decoration: none;
-    font-size: 16px;
+    font-size: 25px;
     padding: 8px 16px;
     border-radius: 20px;
     transition: all 0.3s ease;

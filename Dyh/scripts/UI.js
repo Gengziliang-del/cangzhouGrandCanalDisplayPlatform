@@ -38,10 +38,10 @@ topBarButtons.forEach(button => {
         });
     });
 });
+//--------------------------------------------------------------//
 
-/////////////////////////////////////////////////////
 
-
+/////////////////////图层点击事件////////////////////////////////
 // 图层控制
 const addLayerBtn = document.querySelector('.add-layer-btn');
 const layerMenu = document.querySelector('.layer-menu');
@@ -50,6 +50,15 @@ const layerPanel = document.querySelector('.layer-panel');
 addLayerBtn.addEventListener('click', () => {
     layerMenu.classList.toggle('active');
     layerPanel.classList.toggle('active');
+    // 切换按钮
+    const plusIcon = document.getElementById('plusIcon');
+    if(plusIcon.classList['value'] ==='icon plus-icon')
+    {
+        plusIcon.classList['value']="icon minus-icon";
+    }
+    else {
+        plusIcon.classList['value']="icon plus-icon";
+    }
 });
 
 // 图层开关控制
@@ -62,9 +71,10 @@ layerSwitches.forEach(switch_ => {
         console.log(`${layerName} ${e.target.checked ? '显示' : '隐藏'}`);
     });
 });
+//-------------------------------------------------------------------------//
 
 
-///////////////////////////////////////////////////////////////////////////
+////////////////////////////状态栏////////////////////////////////////////
 // 状态栏信息更新
 const coordinatesElement = document.querySelector('.coordinates');
 const viewHeightElement = document.querySelector('.view-height');
@@ -89,9 +99,10 @@ viewer.scene.postRender.addEventListener(() => {
     const scale = Math.round(height / 100) * 100;
     scaleElement.textContent = `1:${scale}`;
 });
-//////////////////////////////////////////////////////////////////////////////////
+//-----------------------------------------------------------------//
 
 
+///////////////////////////////点击空白处关闭菜单////////////////////////
 // 点击页面空白处关闭菜单
 document.addEventListener('click', (e) => {
     // 关闭顶部导航栏弹出菜单
@@ -111,10 +122,11 @@ document.addEventListener('click', (e) => {
         layerMenu.classList.remove('active');
     }
 });
-
+//---------------------------------------------------------------//
 
 
 /////////////////////////收起导航栏///////////////////////////////////
+//收起打开导航栏
 // 获取导航栏和尾巴按钮的 DOM 元素
 const topNav = document.querySelector('.top-nav');
 const bubble = document.getElementById('navToggleBubble');
@@ -149,10 +161,11 @@ bubble.addEventListener('click', function (event) {
         bubble.classList.add('hidden');
     }, 300);  // 与 CSS transition 的时间保持一致
 });
-/////////////////////////////////////////////////////////////////////
+//---------------------------------------------------------------------//
 
 
 ///////////////////////////拖动工具条/////////////////
+//拖动工具条
 ;(function() {
     const toolbar = document.querySelector('.toolbar');
     let isDragging = false;
@@ -220,4 +233,4 @@ bubble.addEventListener('click', function (event) {
         document.removeEventListener('mouseup',   onMouseUp);
     }
 })();
-//////////////////////////////////
+//-------------------------------------------------------------//

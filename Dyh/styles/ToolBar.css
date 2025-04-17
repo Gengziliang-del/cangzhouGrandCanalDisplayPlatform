@@ -1,7 +1,7 @@
 /* 工具条 */
 .toolbar {
     position: fixed;
-    top: 100px;
+    top: 120px;
     left: 25px;
     /*transform: translateX(-50%);*/
     transform: none;

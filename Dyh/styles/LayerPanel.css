@@ -23,7 +23,9 @@
     border-radius: 10px;
     cursor: pointer;
     transition: all 0.3s ease;
+    font-size: large;
 }
+
 
 /*鼠标悬停时的响应*/
 .add-layer-btn:hover {

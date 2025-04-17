@@ -10,7 +10,7 @@
     <link href="styles/LayerPanel.css" rel="stylesheet">
     <link href="styles/StatusBar.css" rel="stylesheet">
     <link href="styles/analysisPanel.css" rel ="stylesheet">
-
+    <link href = "styles/quickButton.css" rel="stylesheet">
 <!--    小屏幕样式-->
     <link href="styles/min.css" rel = "stylesheet">
 </head>
@@ -55,7 +55,7 @@
 <!-- 左侧图层面板 -->
 <div class="layer-panel">
     <button class="add-layer-btn">
-        <i class="icon plus-icon"></i>
+        <i class="icon plus-icon" style="color: white" id = "plusIcon"></i>
         图层
     </button>
     <div class="layer-menu">
@@ -135,13 +135,25 @@
         <div class="module">模块 3</div>
     </div>
 </div>
-</body>
 
+<!-- 右下角快捷按钮 -->
+<div class="quick-buttons">
+    <button class="quick-btn" title="首页">
+        <i class="icon home-icon"></i>
+    </button>
+    <button class="quick-btn" title="定位">
+        <i class="icon location-icon"></i>
+    </button>
+    <button class="quick-btn" title="帮助">
+        <i class="icon help-icon"></i>
+    </button>
+</div>
+</body>
+<!--外部JS-->
 <!--页面交互设计-->
 <script src="scripts/UI.js" type="module"></script>
 <script type="text/javascript" src="library/jquery-3.7.1.slim.min.js"></script>
 <!--功能设计-->
-
 <!--    js脚本-->
 <script src='../Build/Cesium/Cesium.js'></script>
 <!--    样式表-->

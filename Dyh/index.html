@@ -34,6 +34,16 @@
 <!-- 工具栏 -->
 <div class="toolbar">
     <div class="tab-group">
+        <!--    搜索按钮-->
+        <div class="search-container" id="searchBox">
+            <input type="text" class="search-input" id="searchInput" placeholder="搜索...">
+            <button class="search-button" id="searchBtn">
+                <!-- 放大镜图标（SVG） -->
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M15.5 14h-.79l-.28-.27a6.471 6.471 0 001.48-5.34C15.29 5.59 12.7 3 9.5 3S3.71 5.59 3.71 8.79 6.3 14.57 9.5 14.57c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z" fill="currentColor"/>
+                </svg>
+            </button>
+        </div>
         <button class="tab-item tooltip" data-menu="view">
             <i class="icon view-icon"></i>
             <span class="tooltip-text">视图</span>
@@ -152,16 +162,7 @@
 
 </div>
 
-<!--    搜索按钮-->
-<div class="search-container" id="searchBox">
-    <input type="text" class="search-input" id="searchInput" placeholder="搜索...">
-    <button class="search-button" id="searchBtn">
-        <!-- 放大镜图标（SVG） -->
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-            <path d="M15.5 14h-.79l-.28-.27a6.471 6.471 0 001.48-5.34C15.29 5.59 12.7 3 9.5 3S3.71 5.59 3.71 8.79 6.3 14.57 9.5 14.57c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z" fill="currentColor"/>
-        </svg>
-    </button>
-</div>
+
 
 
 </body>

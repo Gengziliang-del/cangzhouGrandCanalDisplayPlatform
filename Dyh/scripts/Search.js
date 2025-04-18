@@ -8,6 +8,9 @@ let isExpanded = false;
 searchBtn.addEventListener('click', (e) => {
     e.stopPropagation(); // 阻止事件冒泡
     if (!isExpanded) {
+        document.querySelectorAll('.tab-item').forEach(item => {
+            item.style.display = 'none';
+        });
         searchBox.classList.add('active');
         searchInput.focus();
         isExpanded = true;
@@ -25,6 +28,15 @@ document.addEventListener('click', () => {
         searchBox.classList.remove('active');
         searchInput.value = '';
         isExpanded = false;
+
+        //搜索框关闭后打开其他按钮
+        searchBox.addEventListener('transitionend', () => {
+            if (!isExpanded) {
+                document.querySelectorAll('.tab-item').forEach(item => {
+                    item.style.display = 'flex';
+                });
+            }
+        });
     }
 });
 

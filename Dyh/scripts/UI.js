@@ -108,11 +108,14 @@ document.addEventListener('click', (e) => {
     // 关闭顶部导航栏弹出菜单
     document.addEventListener('click', (e) => {
         // 如果点击的目标不在任一菜单或者导航栏中
-        if (!e.target.closest('.topMenu-panel') && !e.target.closest('.top-nav')) {
+        if (!e.target.closest('.topMenu-panel') && !e.target.closest('.top-nav')&& !e.target.closest('.layer-panel')) {
             // 遍历所有菜单并移除 active 类
             document.querySelectorAll('.topMenu-panel').forEach(panel => {
                 panel.classList.remove('active');
             });
+            //关闭图层面板
+            document.querySelector('.layer-panel').classList.remove('active');
+            document.querySelector('.layer-menu').classList.remove('active');
         }
     });
 

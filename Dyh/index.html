@@ -153,11 +153,14 @@
         <i class="icon home-icon"></i>
     </button>
     <button class="quick-btn" title="定位">
-        <i class="icon location-icon"></i>
+        <i class="icon compass-icon"></i>
     </button>
-    <button class="quick-btn" title="帮助">
-        <i class="icon help-icon"></i>
+    <button class="quick-btn" title="视图">
+        <i class="icon icon-2d"></i>
+        <i class="icon icon-3d"></i>
     </button>
+
+
 
 
 </div>
@@ -178,5 +181,29 @@
 <script src="scripts/main.js"></script>
 <script  type="text/javascript" src="scripts/action.js"></script>
 <script type="text/javascript" src = "scripts/Search.js"></script>
+<script type="text/javascript" src = "scripts/view.js"></script>
 
+<!--智能体-->
+<script>
+    window.difyChatbotConfig = {
+        token: 'L51PiXQNx7qWVHqh',
+        baseUrl: 'http://localhost:8081'
+    }
+</script>
+<script
+        src="http://localhost:8081/embed.min.js"
+        id="L51PiXQNx7qWVHqh"
+        defer>
+</script>
+<style>
+    #dify-chatbot-bubble-button {
+        bottom: 50px;
+        background-color: #641010 !important;
+    }
+    #dify-chatbot-bubble-window {
+        top:100px;
+        width: 24rem !important;
+        height: 40rem !important;
+    }
+</style>
 </html>

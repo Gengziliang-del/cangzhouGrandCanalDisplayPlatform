@@ -4,7 +4,7 @@
     top: 0;
     left: 0;
     right: 0;
-    height: 100px;
+    height: 80px;
     background: linear-gradient(135deg, rgba(140, 20, 20, 0.95), rgba(90, 15, 15, 0.95));
     display: flex;
     justify-content: space-between;
@@ -16,8 +16,8 @@
 }
 /*顶部导航栏左侧logo样式*/
 .logo {
-    width:500px;
-    height: 100px;
+    width:400px;
+    height: 80px;
 }
 
 /*顶部导航栏收起*/
@@ -42,7 +42,7 @@
 }
 /*顶部导航栏右侧元素悬停*/
 .nav-item:hover, .nav-item.active {
-    color: #fff;
+    color: #FFBD79;
     background: rgba(255, 255, 255, 0.1);
     transform: translateY(-2px);
 }

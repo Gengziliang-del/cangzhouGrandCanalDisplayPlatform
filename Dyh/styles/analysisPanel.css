@@ -1,8 +1,8 @@
 /*浮动面板整体*/
 .floating-panel {
     position: fixed;
-    top: 120px;
-    right: 40px;
+    top: 25px;
+    right: 25px;
     width: 400px;
     background: #ffffff;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
@@ -73,7 +73,6 @@
     background-color: #8a1717;
     color: white;
 }
-
 
 /*隐藏*/
 .analysisHidden {

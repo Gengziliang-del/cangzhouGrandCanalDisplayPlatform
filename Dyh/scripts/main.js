@@ -15,10 +15,10 @@ let viewer= new Cesium.Viewer("cesiumContainer",{
 
 // 设置初始视角 - 沧州市坐标
 viewer.camera.setView({
-    destination: Cesium.Cartesian3.fromDegrees(116.8452, 38.3047, 50000),
+    destination: Cesium.Cartesian3.fromDegrees(116.8491,38.2397,12000),
     orientation: {
         heading: Cesium.Math.toRadians(0.0),
-        pitch: Cesium.Math.toRadians(-45.0),
+        pitch: Cesium.Math.toRadians(-60.0),
         roll: 0.0
     }
 });

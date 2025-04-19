@@ -12,6 +12,8 @@
     <link href="styles/analysisPanel.css" rel ="stylesheet">
     <link href = "styles/quickButton.css" rel="stylesheet">
     <link href = "styles/Search.css" rel="stylesheet">
+    <link href = "styles/rightClickPanel.css" rel="stylesheet">
+
 <!--    小屏幕样式-->
     <link href="styles/min.css" rel = "stylesheet">
 </head>
@@ -161,8 +163,17 @@
     </button>
 </div>
 
+<!--右键快捷菜单-->
+    <div id='ToolBar'>
+        <button class="ToolButton" id = "ViewTo">跳转到大运河</button>
+    </div>
 
-
+    <div id="contextMenu">
+        <div class="menu-item" id = "surrounding">环绕此点</div>
+        <div class="menu-item" id ="flyTo">飞往此处</div>
+        <hr>
+        <div class="menu-item" onclick="alert('选项3被点击')">选项 3</div>
+    </div>
 
 </body>
 <!--外部JS-->
@@ -176,12 +187,18 @@
 <link href="../Build/Cesium/Widgets/widgets.css" rel="stylesheet">
 
 <!--主要功能-->
+<!--=========数据=============-->
+<script src = "./JsonData/flightTrajectory.js"></script>
 <!--===========功能函数========-->
-<script src = "scripts/live3D.js"></script>
-
-
-
 <script src="scripts/main.js"></script>
+<script src = "scripts/live3D.js"></script>
+<script src = "scripts/rightClickPanel.js"></script>
+<script src = "scripts/conversion.js"></script>
+<script src  ="scripts/fly.js"></script>
+<script src ="scripts/water.js"></script>
+
+
+
 <script  type="text/javascript" src="scripts/action.js"></script>
 <!--搜索按钮-->
 <script type="text/javascript" src = "scripts/Search.js"></script>

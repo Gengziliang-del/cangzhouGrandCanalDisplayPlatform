@@ -1,0 +1,25 @@
+
+/* 右键菜单样式 */
+#contextMenu {
+    display: none; /* 初始隐藏 */
+    position: absolute;
+    background: rgb(255, 255, 255);
+    color: #000000;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    z-index: 20;
+}
+
+/* 右键菜单项 */
+.menu-item {
+    padding: 5px 10px;
+    cursor: pointer;
+    solid-color: #787878;
+    width:150px;
+
+}
+
+.menu-item:hover {
+    background-color: rgba(194,231,255); /* 鼠标悬停时变蓝色 */
+}

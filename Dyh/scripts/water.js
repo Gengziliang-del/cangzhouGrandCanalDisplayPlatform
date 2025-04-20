@@ -2,23 +2,24 @@
 viewer.scene.globe.depthTestAgainstTerrain = true;
 //定义外观
 let rectangleAppearance = new Cesium.EllipsoidSurfaceAppearance({
-    material:new Cesium.Material({
+    material: new Cesium.Material({
         fabric:
             {
-                type:'Water',
+                type: 'Water',
                 uniforms://材质类型
                     {
-                        baseWaterColor:new Cesium.Color(0.2,0.3,0.5, 0.6),//基础颜色
-                        normalMap:'./image/水面3.jpg',//法线纹理贴图
-                        frequency:100,//波纹数量
-                        animationSpeed:0.001,//波纹震动速度
-                        amplitude:5,//波纹振幅
+                        baseWaterColor: new Cesium.Color(0.2, 0.3, 0.5, 0.6),//基础颜色
+                        normalMap: './image/水面3.jpg',//法线纹理贴图
+                        frequency: 100,//波纹数量
+                        animationSpeed: 0.001,//波纹震动速度
+                        amplitude: 5,//波纹振幅
                         flowDirection: new Cesium.Cartesian2(1.0, 0.0)
                     }
             }
     })
 })
 
+//添加形状
 Cesium.GeoJsonDataSource.load("./JsonData/lake.geojson").then(function (dataSource) {
     let entities = dataSource.entities.values; // 获取所有实体
     //geojson转换为几何形状
@@ -38,9 +39,10 @@ Cesium.GeoJsonDataSource.load("./JsonData/lake.geojson").then(function (dataSour
 
     //创建一个Primitive对象，即将外观加载到几何形状上
     let addRectangleGeometry = new Cesium.Primitive({
-        geometryInstances:geometryInstances,
-        appearance:rectangleAppearance
+        geometryInstances: geometryInstances,
+        appearance: rectangleAppearance
     })
+
     //加载Primitive
     viewer.scene.primitives.add(addRectangleGeometry)
 });

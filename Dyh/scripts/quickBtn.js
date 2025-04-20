@@ -15,14 +15,14 @@ $('.view-btn').on('click', function () {
     }
 });
 
-$('.home-btn').on('click',function (){
+$('.home-btn').on('click', function () {
     viewer.camera.flyTo(
         {
-            destination:Cesium.Cartesian3.fromDegrees(116.8491,38.2397,12000),
-            orientation:{
-                heading:Cesium.Math.toRadians(0),
-                pitch:Cesium.Math.toRadians(-60),
-                roll:0
+            destination: Cesium.Cartesian3.fromDegrees(116.8491, 38.2397, 12000),
+            orientation: {
+                heading: Cesium.Math.toRadians(0),
+                pitch: Cesium.Math.toRadians(-60),
+                roll: 0
             },
         }
     )
@@ -30,7 +30,7 @@ $('.home-btn').on('click',function (){
     viewer.camera.lookAtTransform(Cesium.Matrix4.IDENTITY);
 });
 
-$('.compass-btn').on('click',function (){
+$('.compass-btn').on('click', function () {
 
     const camera = viewer.camera;
     const currentPitch = camera.pitch;

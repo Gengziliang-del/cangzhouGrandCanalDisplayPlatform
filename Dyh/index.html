@@ -4,23 +4,31 @@
     <meta charset="UTF-8"/>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
     <title>沧州大运河展示系统</title>
+    <!--    主页样式-->
     <link href="styles/UI.css" rel="stylesheet"/>
+    <!--    导航栏样式-->
     <link href="styles/TopNav.css" rel="stylesheet">
+    <!--    工具条样式-->
     <link href="styles/ToolBar.css" rel="stylesheet">
+    <!--    图层列表样式-->
     <link href="styles/LayerPanel.css" rel="stylesheet">
+    <!--    状态栏样式-->
     <link href="styles/StatusBar.css" rel="stylesheet">
-    <link href="styles/analysisPanel.css" rel ="stylesheet">
-    <link href = "styles/quickButton.css" rel="stylesheet">
-    <link href = "styles/Search.css" rel="stylesheet">
-    <link href = "styles/rightClickPanel.css" rel="stylesheet">
-
-<!--    小屏幕样式-->
-    <link href="styles/min.css" rel = "stylesheet">
+    <!--    分析面板样式-->
+    <link href="styles/analysisPanel.css" rel="stylesheet">
+    <!--    快捷按钮样式-->
+    <link href="styles/quickButton.css" rel="stylesheet">
+    <!--    搜索按钮样式-->
+    <link href="styles/Search.css" rel="stylesheet">
+    <!--    右键菜单样式-->
+    <link href="styles/rightClickPanel.css" rel="stylesheet">
+    <!--    小屏幕样式-->
+    <link href="styles/min.css" rel="stylesheet">
 </head>
 <body>
 <!-- 顶部导航栏 -->
 <nav class="top-nav">
-    <img class = "logo" src="ico/logo.png"/>
+    <img class="logo" src="ico/logo.png"/>
     <div class="nav-items">
         <a class="nav-item" data-menu="model1" href="#">模块一</a>
         <a class="nav-item" data-menu="model2" href="#">模块二</a>
@@ -33,16 +41,18 @@
     &#9776;
 </div>
 
+
 <!-- 工具栏 -->
 <div class="toolbar">
     <div class="tab-group">
         <!--    搜索按钮-->
         <div class="search-container" id="searchBox">
-            <input type="text" class="search-input" id="searchInput" placeholder="搜索...">
+            <input class="search-input" id="searchInput" placeholder="搜索..." type="text">
             <button class="search-button" id="searchBtn">
                 <!-- 放大镜图标（SVG） -->
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                    <path d="M15.5 14h-.79l-.28-.27a6.471 6.471 0 001.48-5.34C15.29 5.59 12.7 3 9.5 3S3.71 5.59 3.71 8.79 6.3 14.57 9.5 14.57c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z" fill="currentColor"/>
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M15.5 14h-.79l-.28-.27a6.471 6.471 0 001.48-5.34C15.29 5.59 12.7 3 9.5 3S3.71 5.59 3.71 8.79 6.3 14.57 9.5 14.57c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"
+                          fill="currentColor"/>
                 </svg>
             </button>
         </div>
@@ -65,10 +75,11 @@
     </div>
 </div>
 
+
 <!-- 左侧图层面板 -->
 <div class="layer-panel">
     <button class="add-layer-btn">
-        <i class="icon plus-icon" style="color: white" id = "plusIcon"></i>
+        <i class="icon plus-icon" id="plusIcon" style="color: white"></i>
         图层
     </button>
     <div class="layer-menu">
@@ -82,22 +93,24 @@
         <div class="layer-item">
             <span>实景三维</span>
             <label class="switch">
-                <input type="checkbox" id="add3DData"/>
+                <input id="add3DData" type="checkbox"/>
                 <span class="slider"></span>
             </label>
         </div>
         <div class="layer-item">
-            <span>其他图层</span>
+            <span>正射影像</span>
             <label class="switch">
-                <input type="checkbox"/>
+                <input id="addDOM" type="checkbox"/>
                 <span class="slider"></span>
             </label>
         </div>
     </div>
 </div>
 
+
 <!-- 主视图区域 -->
 <div id="cesiumContainer"></div>
+
 
 <!-- 底部状态栏 -->
 <div class="status-bar">
@@ -115,6 +128,7 @@
     </div>
 </div>
 
+
 <!--顶部导航栏弹出菜单-->
 <div class="topMenu-panel model1-menu">
     <div class="menu-item" id=“topJump”>A功能1</div>
@@ -131,6 +145,7 @@
     <div class="menu-item">B其他</div>
 </div>
 
+
 <!-- 悬浮窗：默认隐藏 -->
 <div class="floating-panel analysisHidden" id="analysis-panel">
     <div class="panel-header">
@@ -138,8 +153,8 @@
         <span class="panel-title">分析面板</span>
         <button class="close-btn" onclick="closePanel()">✕</button>
     </div>
-    <hr style = 'border: #751917 solid 1px'>
-    <div class = "panel-illustrate">
+    <hr style='border: #751917 solid 1px'>
+    <div class="panel-illustrate">
         <span>选择工具用于分析操作</span>
     </div>
     <div class="panel-content">
@@ -148,6 +163,7 @@
         <div class="module">模块 3</div>
     </div>
 </div>
+
 
 <!-- 右下角快捷按钮 -->
 <div class="quick-buttons">
@@ -163,47 +179,61 @@
     </button>
 </div>
 
-<!--右键快捷菜单-->
-    <div id='ToolBar'>
-        <button class="ToolButton" id = "ViewTo">跳转到大运河</button>
-    </div>
 
-    <div id="contextMenu">
-        <div class="menu-item" id = "surrounding">环绕此点</div>
-        <div class="menu-item" id ="flyTo">飞往此处</div>
-        <hr>
-        <div class="menu-item" onclick="alert('选项3被点击')">选项 3</div>
-    </div>
+<!--右键快捷菜单-->
+<div id='ToolBar'>
+    <button class="ToolButton" id="ViewTo">跳转到大运河</button>
+</div>
+
+<div id="contextMenu">
+    <div class="menu-item" id="surrounding">环绕此点</div>
+    <div class="menu-item" id="flyTo">飞往此处</div>
+    <hr>
+    <div class="menu-item" onclick="alert('选项3被点击')">选项 3</div>
+</div>
 
 </body>
 <!--外部JS-->
 <!--页面交互设计-->
 <script src="scripts/UI.js" type="module"></script>
-<script type="text/javascript" src="library/jquery-3.7.1.slim.min.js"></script>
+<script src="library/jquery-3.7.1.slim.min.js" type="text/javascript"></script>
+
 <!--功能设计-->
-<!--    js脚本-->
+<!--    Cesium库js脚本-->
 <script src='../Build/Cesium/Cesium.js'></script>
-<!--    样式表-->
+<!--    Cesium样式表-->
 <link href="../Build/Cesium/Widgets/widgets.css" rel="stylesheet">
 
 <!--主要功能-->
 <!--=========数据=============-->
-<script src = "./JsonData/flightTrajectory.js"></script>
+<script src="jsonData/flightTrajectory.js"></script>
+
+
 <!--===========功能函数========-->
+<!--入口-->
 <script src="scripts/main.js"></script>
-<script src = "scripts/live3D.js"></script>
-<script src = "scripts/rightClickPanel.js"></script>
-<script src = "scripts/conversion.js"></script>
-<script src  ="scripts/fly.js"></script>
-<script src ="scripts/water.js"></script>
+<!--三维实景-->
+<script src="scripts/live3D.js"></script>
+<!--右键菜单-->
+<script src="scripts/rightClickPanel.js"></script>
+<!--转换数据-->
+<script src="scripts/conversion.js"></script>
+<!--飞行游览-->
+<script src="scripts/fly.js"></script>
+<!--动态水体-->
+<script src="scripts/water.js"></script>
+<!--正射影像-->
+<script src="scripts/DOM.js"></script>
 
 
+<!--分析面板-->
+<script src="scripts/action.js" type="text/javascript"></script>
 
-<script  type="text/javascript" src="scripts/action.js"></script>
-<!--搜索按钮-->
-<script type="text/javascript" src = "scripts/Search.js"></script>
-<!--视图按钮-->
-<script type="text/javascript" src = "scripts/quickBtn.js"></script>
+<!--搜索-->
+<script src="scripts/search.js" type="text/javascript"></script>
+
+<!--视图-->
+<script src="scripts/quickBtn.js" type="text/javascript"></script>
 
 <!--智能体-->
 <script>
@@ -213,17 +243,18 @@
     }
 </script>
 <script
-        src="http://localhost:8081/embed.min.js"
+        defer
         id="L51PiXQNx7qWVHqh"
-        defer>
+        src="http://localhost:8081/embed.min.js">
 </script>
 <style>
     #dify-chatbot-bubble-button {
         bottom: 50px;
         background-color: #641010 !important;
     }
+
     #dify-chatbot-bubble-window {
-        top:100px;
+        top: 100px;
         width: 24rem !important;
         height: 40rem !important;
     }

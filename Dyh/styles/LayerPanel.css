@@ -3,8 +3,8 @@
     position: fixed;
     left: 20px;
     /*bottom: 20px;*/
-    bottom:35px;
-    background: rgba(255, 255, 255,0);
+    bottom: 35px;
+    background: rgba(255, 255, 255, 0);
     border-radius: 15px;
     padding: 15px;
     z-index: 100;
@@ -47,7 +47,7 @@
 }
 
 .layer-menu {
-    transition: background 0.3s ease;  /* 添加背景属性的过渡效果 */
+    transition: background 0.3s ease; /* 添加背景属性的过渡效果 */
     /* 其它样式 */
 }
 
@@ -104,10 +104,14 @@ input:checked + .slider:before {
 
 /*图层按钮滑入关键帧*/
 @keyframes slideIn {
-    from { transform: translateY(100%);
-        opacity: 0}
-    to { transform: translateY(0%);
-        opacity: 1}
+    from {
+        transform: translateY(100%);
+        opacity: 0
+    }
+    to {
+        transform: translateY(0%);
+        opacity: 1
+    }
 }
 
 /*图层按钮点击响应-图层按钮滑入时间*/

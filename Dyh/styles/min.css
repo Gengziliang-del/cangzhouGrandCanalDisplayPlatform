@@ -80,28 +80,30 @@
     }
 
     /*==============分析面板===========*/
-    .floating-panel{
-        right:10px;
-        width:100px;
+    .floating-panel {
+        right: 10px;
+        width: 100px;
     }
 
     .panel-content {
         display: flex;
-        flex-direction: column;    /* ← 纵向排列 */
-        align-items: center;       /* 水平居中（按需改成 flex-start 或 flex-end） */
+        flex-direction: column; /* ← 纵向排列 */
+        align-items: center; /* 水平居中（按需改成 flex-start 或 flex-end） */
         /* justify-content: space-around; 纵向时这条控制上下间距，也可以改成 space-between、flex-start… */
-        gap: 20px;                 /* 元素间的垂直间距，等同于给 .module margin */
+        gap: 20px; /* 元素间的垂直间距，等同于给 .module margin */
         padding: 20px;
     }
-    .panel-illustrate{
-        display: none;
-    }
-    .panel-header span{
+
+    .panel-illustrate {
         display: none;
     }
 
-/*    ==========快速按钮==============*/
+    .panel-header span {
+        display: none;
+    }
+
+    /*    ==========快速按钮==============*/
     .quick-buttons {
-        right:70px;
+        right: 70px;
     }
 }

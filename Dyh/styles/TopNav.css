@@ -9,14 +9,15 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 20px 0 0;/*上右下左*/
+    padding: 0 20px 0 0; /*上右下左*/
     z-index: 100;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
     transition: top 0.3s ease; /* 添加过渡效果 */
 }
+
 /*顶部导航栏左侧logo样式*/
 .logo {
-    width:400px;
+    width: 400px;
     height: 80px;
 }
 
@@ -31,6 +32,7 @@
     display: flex;
     gap: 20px;
 }
+
 /*顶部导航栏右侧元素样式*/
 .nav-item {
     color: rgba(255, 255, 255, 0.8);
@@ -40,6 +42,7 @@
     border-radius: 20px;
     transition: all 0.3s ease;
 }
+
 /*顶部导航栏右侧元素悬停*/
 .nav-item:hover, .nav-item.active {
     color: #FFBD79;
@@ -72,11 +75,12 @@
     background: rgba(140, 20, 20, 0.1);
     color: #8b1515;
 }
+
 /*------------------------------------------------------------*/
 
 
 /*顶部导航栏元素的点击响应*/
-.topMenu-panel.active{
+.topMenu-panel.active {
     display: block;
     animation: fadeIn 0.3s ease-out;
 }
@@ -104,6 +108,7 @@
     font-size: 14px;
     transition: all 0.3s ease;
 }
+
 /* 默认隐藏尾巴 */
 .nav-toggle-bubble.hidden {
     display: none;

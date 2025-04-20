@@ -35,7 +35,7 @@ document.addEventListener("click", (event) => {
 
 
 ///////////点击环绕//////////////
-$('#surrounding').on('click',function(){
+$('#surrounding').on('click', function () {
     const height = viewer.camera.positionCartographic.height.toFixed(0);
     let angle = 0;//初始角度
     rotateFlag = true;//是否暂停标记
@@ -58,8 +58,8 @@ $('#surrounding').on('click',function(){
 
 
 // 飞往某处
-$('#flyTo').on('click',function (){
-    let newPosition = Transfrom(earthPosition,500);
+$('#flyTo').on('click', function () {
+    let newPosition = Transfrom(earthPosition, 500);
     viewer.camera.flyTo(
         {
             destination: newPosition,
@@ -68,14 +68,14 @@ $('#flyTo').on('click',function (){
                 pitch: Cesium.Math.toRadians(-90),
                 roll: 0
             },
-            maximumHeight:100,
+            maximumHeight: 100,
         }
     )
 });
 
 
 //转换坐标
-function Transfrom(earthPosition,newHeight) {
+function Transfrom(earthPosition, newHeight) {
     let cartographic = Cesium.Cartographic.fromCartesian(earthPosition);
     let longitude = Cesium.Math.toDegrees(cartographic.longitude);
     let latitude = Cesium.Math.toDegrees(cartographic.latitude);

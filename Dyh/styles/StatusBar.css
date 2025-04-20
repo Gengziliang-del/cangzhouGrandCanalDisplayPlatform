@@ -3,7 +3,7 @@
     position: fixed;
     /*right: 20px;*/
     /*button : 20px;*/
-    width:100%;
+    width: 100%;
     bottom: 0;
     background: rgba(255, 255, 255, 0.75);
     /*border-radius: 25px;*/
@@ -15,7 +15,7 @@
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     /*    内部元素居中*/
     justify-content: center;
-    gap:30px;
+    gap: 30px;
 }
 
 .status-item {

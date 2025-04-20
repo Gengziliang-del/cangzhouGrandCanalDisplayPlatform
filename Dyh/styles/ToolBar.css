@@ -44,11 +44,19 @@
     display: block;
     animation: fadeIn 0.3s ease-out;
 }
+
 /* 动画效果 */
 @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(-10px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
+
 /*工具栏点击提示文字*/
 /*======================================*/
 .tooltip {
@@ -75,6 +83,7 @@
     font-size: 12px;
     white-space: nowrap;
 }
+
 /*三角箭头标记*/
 .tooltip-text::after {
     content: "";
@@ -84,11 +93,13 @@
     margin-left: -5px;
     border-width: 5px;
     border-style: solid;
-    border-color: transparent transparent #7d1818 transparent;  /* 上边为透明，下边为 tooltip 背景色 */
+    border-color: transparent transparent #7d1818 transparent; /* 上边为透明，下边为 tooltip 背景色 */
 }
+
 /*鼠标悬停时*/
 .tooltip:hover .tooltip-text {
     visibility: visible;
     opacity: 1;
 }
+
 /*---------------------------------------------*/

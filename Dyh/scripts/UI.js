@@ -8,15 +8,12 @@ topBarButtons.forEach(button => {
         console.log(menuType);
         //根据菜单名称确认选择的菜单（menutype插入）
         const targetMenu = document.querySelector(`.${menuType}-menu`);
-        console.log(targetMenu);
-
         // 关闭其他菜单
         topMenuPanels.forEach(panel => {
             if (panel !== targetMenu) {
                 panel.classList.remove('active');
             }
         });
-
         // 切换目标菜单
         if (targetMenu) {
             targetMenu.classList.toggle('active');
@@ -26,8 +23,7 @@ topBarButtons.forEach(button => {
                 targetMenu.style.left = `${buttonRect.left}px`;
             }
         }
-
-        // 给所有顶部菜单项绑定点击事件，点击后关闭弹出菜单
+        // 给所有顶部菜单项绑定点击事件，选中选项后后关闭弹出菜单
         topMenuPanels.forEach(panel => {
             const items = panel.querySelectorAll('.menu-item');
             items.forEach(item => {
@@ -48,9 +44,10 @@ const layerMenu = document.querySelector('.layer-menu');
 const layerPanel = document.querySelector('.layer-panel');
 
 addLayerBtn.addEventListener('click', () => {
+    //如果元素上 有 active 类，就移除；如果元素上 没有 active 类，就添加。
     layerMenu.classList.toggle('active');
     layerPanel.classList.toggle('active');
-    // 切换按钮
+    // 切换按钮样式
     const plusIcon = document.getElementById('plusIcon');
     if(plusIcon.classList['value'] ==='icon plus-icon')
     {
@@ -61,16 +58,6 @@ addLayerBtn.addEventListener('click', () => {
     }
 });
 
-// 图层开关控制
-const layerSwitches = document.querySelectorAll('.layer-item input[type="checkbox"]');
-
-layerSwitches.forEach(switch_ => {
-    switch_.addEventListener('change', (e) => {
-        const layerName = e.target.closest('.layer-item').querySelector('span').textContent;
-        // 这里可以添加具体的图层显示/隐藏逻辑
-        console.log(`${layerName} ${e.target.checked ? '显示' : '隐藏'}`);
-    });
-});
 //-------------------------------------------------------------------------//
 
 
@@ -81,7 +68,6 @@ const viewHeightElement = document.querySelector('.view-height');
 const scaleElement = document.querySelector('.scale');
 
 viewer.scene.globe.enableLighting = true;
-
 viewer.scene.postRender.addEventListener(() => {
     const camera = viewer.camera;
     const position = camera.positionCartographic;
@@ -105,9 +91,7 @@ viewer.scene.postRender.addEventListener(() => {
 ///////////////////////////////点击空白处关闭菜单////////////////////////
 // 点击页面空白处关闭菜单
 document.addEventListener('click', (e) => {
-    // 关闭顶部导航栏弹出菜单
-    document.addEventListener('click', (e) => {
-        // 如果点击的目标不在任一菜单或者导航栏中
+// 如果点击的目标不在任一菜单或者导航栏中
         if (!e.target.closest('.topMenu-panel') && !e.target.closest('.top-nav')&& !e.target.closest('.layer-panel')) {
             // 遍历所有菜单并移除 active 类
             document.querySelectorAll('.topMenu-panel').forEach(panel => {
@@ -117,14 +101,7 @@ document.addEventListener('click', (e) => {
             document.querySelector('.layer-panel').classList.remove('active');
             document.querySelector('.layer-menu').classList.remove('active');
         }
-    });
-
-//点击工具条（含子内容）
-    if (e.target.closest('.toolMenu-panel')) {
-        //关闭菜单
-        layerMenu.classList.remove('active');
-    }
-});
+})
 //---------------------------------------------------------------//
 
 

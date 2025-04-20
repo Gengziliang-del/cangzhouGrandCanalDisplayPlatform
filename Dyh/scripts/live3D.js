@@ -1,4 +1,4 @@
-function addReality3DData(){
+function addReality3DData() {
     const tileset = viewer.scene.primitives.add(
         new Cesium.Cesium3DTileset({
             url: "./3dTiles/3dTiles1.0/tileset.json",

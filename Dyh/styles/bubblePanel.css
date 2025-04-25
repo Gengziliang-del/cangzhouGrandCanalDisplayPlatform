@@ -1,0 +1,72 @@
+#bubblePanel {
+    position: fixed;
+    top: 85px;
+    right: 25px;
+    width: 350px;
+    background: #ffffff;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+    z-index: 997;
+    transition: all 0.3s ease;
+    font-family:"Georgia", serif;
+}
+
+#bubblePanel-head {
+    position: relative;
+    height: 50px;
+    padding: 0 10px;
+}
+
+#bubblePanel-title {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 50px;
+}
+
+.bubble-close-btn {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 0 5px 0 5px;
+    background: none;
+    border: none;
+    font-size: 25px;
+    cursor: pointer;
+}
+.bubble-close-btn:hover {
+    background-color: #8a1717;
+    color: white;
+}
+
+/**/
+#bubblePanel-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* 水平居中子元素 */
+    padding: 10px 0;
+}
+
+#bubblePanel-body img{
+    /*border:5px solid #791212;*/
+    width: 330px;
+    height: 200px;
+    border-radius: 10px;
+}
+
+.bubblePanel-text {
+    border:3px solid #791212;
+    padding: 5px;
+    margin-top:20px;
+    width: 330px;
+    /*height: 30px;*/
+    background-color: #ffffff;
+}
+
+/*隐藏*/
+.bubbleHidden{
+    display: none;
+}

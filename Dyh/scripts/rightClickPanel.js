@@ -29,7 +29,9 @@ document.addEventListener("click", (event) => {
     menu.style.display = "none";
     if (!menu.contains(event.target)) {
         rotateFlag = false;
-        viewer.camera.lookAtTransform(Cesium.Matrix4.IDENTITY);
+        if (!flag_fly){
+            viewer.scene.camera.lookAtTransform(Cesium.Matrix4.IDENTITY);
+        }
     }
 });
 

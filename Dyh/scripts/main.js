@@ -11,8 +11,12 @@ let viewer = new Cesium.Viewer("cesiumContainer", {
     timeline: false,//时间轴
     fullscreenButton: false,//全屏按钮
     //其他参数
+    // terrainProvider:Cesium.createWorldTerrain()
 });
-
+viewer.cesiumWidget.screenSpaceEventHandler.removeInputAction(Cesium.ScreenSpaceEventType.LEFT_DOUBLE_CLICK);
+viewer.cesiumWidget.screenSpaceEventHandler.removeInputAction(Cesium.ScreenSpaceEventType.LEFT_CLICK);
+////一些重要的标志
+let flag_fly = false;
 // 设置初始视角 - 沧州市坐标
 viewer.camera.setView({
     destination: Cesium.Cartesian3.fromDegrees(116.8491, 38.2397, 12000),
@@ -22,7 +26,6 @@ viewer.camera.setView({
         roll: 0.0
     }
 });
-
 
 
 

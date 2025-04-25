@@ -1,4 +1,4 @@
-const flydata = {
+let data = {
     "type": "FeatureCollection",
     "features": [{
         "type": "Feature",

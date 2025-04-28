@@ -36,8 +36,8 @@ $('#addPOI').on('change',function (){
        POI_Add(
            {
                path:"./jsonData/POI.geojson",
-               image:"./ico/park.png",
-               scale:0.25,
+               image:"./ico/icons8-park-32-2.png",
+               scale:0.8,
                DataSource_obj:POI,
            }
        )

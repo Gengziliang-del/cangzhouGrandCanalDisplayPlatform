@@ -6,8 +6,6 @@ $(document).ready(function () {
     });
 
     // 点击关闭按钮，隐藏分析面板
-
-
 });
 
 

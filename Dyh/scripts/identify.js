@@ -17,3 +17,4 @@ $('#bubblePanel-close').on('click', function () {
     console.log("关闭");
     $('#bubblePanel').addClass('bubbleHidden');
 })
+

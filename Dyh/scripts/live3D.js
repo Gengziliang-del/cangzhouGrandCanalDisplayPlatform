@@ -17,6 +17,7 @@ $('#add3DData').on('change', function () {
         //被勾选了，执行加载实景三维逻辑
         console.log('加载实景三维数据');
         tileset = addReality3DData();
+
         viewer.zoomTo(tileset);
     } else {
         //取消勾选，执行移除实景三维逻辑

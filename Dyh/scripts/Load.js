@@ -19,9 +19,13 @@ function POI_Add({path, DataSource_obj, image, scale = 0.7}) {
 
             // 检查是否为 "点"（Point）
             if (entity.position) {
+                console.log(entity);
+                const type = entity._properties._Type._value;
+                console.log( "./ico/"+type+".png");
+
                 // 移除默认样式（如 marker）
                 entity.billboard = new Cesium.BillboardGraphics({
-                    image: image, // 自定义图标路径
+                    image: "./ico/landmark/"+type+".png", // 自定义图标路径
                     scale: scale, // 自定义图标缩放比例
                     verticalOrigin: Cesium.VerticalOrigin.BOTTOM, // 图标对齐方式
                     heightReference: Cesium.HeightReference.CLAMP_TO_GROUND // 对齐地面
@@ -30,12 +34,15 @@ function POI_Add({path, DataSource_obj, image, scale = 0.7}) {
         }
     });
 }
+
+
+
 let POI={source:null};
 $('#addPOI').on('change',function (){
     if ($(this).is(':checked')) {
        POI_Add(
            {
-               path:"./jsonData/POI.geojson",
+               path:"./jsonData/attr3.geojson",
                image:"./ico/icons8-park-32-2.png",
                scale:0.8,
                DataSource_obj:POI,

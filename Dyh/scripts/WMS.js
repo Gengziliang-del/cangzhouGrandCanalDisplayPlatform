@@ -16,6 +16,8 @@ function addWFM(){
     global_road_layer=imageryLayer;
     console.log(global_road_layer);
     viewer.imageryLayers.add(imageryLayer);
+
+    //是否跳转到。。。
     // viewer.homeButton.viewModel.command.beforeExecute.addEventListener(function (commandInfo) {
     //     // Fly to tileset
     //     viewer.flyTo(tileset);
@@ -24,6 +26,7 @@ function addWFM(){
     // });
 }
 
+let global_road_layer = null;
 $('#addRoad').on('change',function (){
     if ($(this).is(':checked')) {
         addWFM();

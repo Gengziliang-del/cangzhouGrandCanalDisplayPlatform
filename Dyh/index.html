@@ -24,10 +24,10 @@
     <link href="styles/rightClickPanel.css" rel="stylesheet">
     <!--    小屏幕样式-->
     <link href="styles/min.css" rel="stylesheet">
-<!--    气泡面板样式-->
-    <link href = "styles/bubblePanel.css" rel = "stylesheet">
-<!--    景点列表-->
-    <link href = "styles/listOfAttractions.css" rel = "stylesheet">
+    <!--    气泡面板样式-->
+    <link href="styles/bubblePanel.css" rel="stylesheet">
+    <!--    景点列表-->
+    <link href="styles/listOfAttractions.css" rel="stylesheet">
 </head>
 <body>
 <!-- 顶部导航栏 -->
@@ -49,24 +49,24 @@
 <!-- 工具栏 -->
 <div class="toolbar">
     <div class="tab-group">
-        <!--    搜索按钮-->
-        <div class="search-container" id="searchBox">
-            <input class="search-input" id="searchInput" placeholder="搜索..." type="text">
-            <button class="search-button" id="searchBtn">
-                <!-- 放大镜图标（SVG） -->
-                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M15.5 14h-.79l-.28-.27a6.471 6.471 0 001.48-5.34C15.29 5.59 12.7 3 9.5 3S3.71 5.59 3.71 8.79 6.3 14.57 9.5 14.57c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"
-                          fill="currentColor"/>
-                </svg>
-            </button>
-        </div>
+        <!--        &lt;!&ndash;    搜索按钮&ndash;&gt;-->
+        <!--        <div class="search-container" id="searchBox">-->
+        <!--            <input class="search-input" id="searchInput" placeholder="搜索..." type="text">-->
+        <!--            <button class="search-button" id="searchBtn">-->
+        <!--                &lt;!&ndash; 放大镜图标（SVG） &ndash;&gt;-->
+        <!--                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">-->
+        <!--                    <path d="M15.5 14h-.79l-.28-.27a6.471 6.471 0 001.48-5.34C15.29 5.59 12.7 3 9.5 3S3.71 5.59 3.71 8.79 6.3 14.57 9.5 14.57c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"-->
+        <!--                          fill="currentColor"/>-->
+        <!--                </svg>-->
+        <!--            </button>-->
+        <!--        </div>-->
         <button class="tab-item tooltip" data-menu="view">
             <i class="icon view-icon"></i>
             <span class="tooltip-text">视图</span>
             <!--          视图-->
         </button>
         <span class="tooltip-text">视图</span>
-        <button class="tab-item tooltip" id = "tool-fly" data-menu="fly">
+        <button class="tab-item tooltip" data-menu="fly" id="tool-fly">
             <i class="icon airplane-icon"></i>
             <span class="tooltip-text">飞行</span>
             <!--          测量-->
@@ -105,6 +105,13 @@
             <span>POI</span>
             <label class="switch">
                 <input id="addPOI" type="checkbox"/>
+                <span class="slider"></span>
+            </label>
+        </div>
+        <div class="layer-item">
+            <span>路网</span>
+            <label class="switch">
+                <input id="addRoad" type="checkbox"/>
                 <span class="slider"></span>
             </label>
         </div>
@@ -155,7 +162,7 @@
     <div class="panel-header">
         <i class="icon analysis-icon"></i>
         <span class="panel-title">飞行操控</span>
-        <button class="close-btn" id = "panel-close">✕</button>
+        <button class="close-btn" id="panel-close">✕</button>
     </div>
     <hr style='border: #751917 solid 1px'>
     <div class="panel-illustrate">
@@ -163,7 +170,7 @@
     </div>
     <div class="panel-content">
         <div class="module" id="fly-start">重飞</div>
-        <div class="module" id = "fly-pause">暂停</div>
+        <div class="module" id="fly-pause">暂停</div>
         <div class="module" id="fly-end">结束</div>
     </div>
 </div>
@@ -196,26 +203,70 @@
 </div>
 
 <!--气泡面板-->
-<div id ='bubblePanel' class = 'bubbleHidden'>
-    <div id ='bubblePanel-head'>
-        <div id ="bubblePanel-title">
+<div class='bubbleHidden' id='bubblePanel'>
+    <div id='bubblePanel-head'>
+        <div id="bubblePanel-title">
             标题
         </div>
-        <button class="bubble-close-btn" id = "bubblePanel-close">✕</button>
+        <button class="bubble-close-btn" id="bubblePanel-close">✕</button>
     </div>
     <hr>
-    <div id ='bubblePanel-body'>
-        <img id ="bubblePanel-img" src="./ico/collapse.jpg" alt = '正在加载'>
+    <div id='bubblePanel-body'>
+        <img alt='正在加载' id="bubblePanel-img" src="./ico/collapse.jpg">
         <hr>
-        <div class = "bubblePanel-text" id ="bubble-describe">
+        <div class="bubblePanel-text" id="bubble-describe">
             简介
         </div>
     </div>
 </div>
 
 <!--景点列表-->
-<div></div>
+<div class="ball">
+    <!--    搜索按钮-->
+    <div class="search-container" id="searchBox">
+        <input class="search-input" id="searchInput" placeholder="搜索..." type="text">
+        <button class="search-button" id="searchBtn">
+            <!-- 放大镜图标（SVG） -->
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M15.5 14h-.79l-.28-.27a6.471 6.471 0 001.48-5.34C15.29 5.59 12.7 3 9.5 3S3.71 5.59 3.71 8.79 6.3 14.57 9.5 14.57c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"
+                      fill="currentColor"/>
+            </svg>
+        </button>
+    </div>
+    <div class = "Attraction-Title">展开</div>
+    <ul class="Attraction-Collections">
+        <li class="Attraction-Collection">
+            <span>区域1</span>
+            <ul class="Attractions">
+                <li >
+                    景点1
+                </li>
+                <li >
+                    景点2
+                </li>
+                <li >
+                    景点3
+                </li>
+            </ul>
 
+        </li>
+        <li class="Attraction-Collection">
+            <span>区域1</span>
+            <ul class="Attractions">
+                <li >
+                    景点1
+                </li>
+                <li >
+                    景点2
+                </li>
+                <li >
+                    景点3
+                </li>
+            </ul>
+
+        </li>
+    </ul>
+</div>
 
 
 </body>
@@ -233,7 +284,7 @@
 <!--主要功能-->
 <!--=========数据=============-->
 <script src="jsonData/flightTrajectory.js"></script>
-<script src = "jsonData/path.js"></script>
+<script src="jsonData/path.js"></script>
 
 
 <!--===========功能函数========-->
@@ -254,20 +305,22 @@
 <script src="scripts/DOM.js"></script>
 
 <!--加载POI-->
-<script src = "scripts/Load.js"></script>
-<script src = "scripts/identify.js"></script>
+<script src="scripts/Load.js"></script>
+<script src="scripts/identify.js"></script>
+<!--加载WFS-->
+<script src = "scripts/WMS.js"></script>
 
 
 <!--分析面板-->
 <script src="scripts/action.js" type="text/javascript"></script>
 <!--景点列表-->
-<script src = "scripts/Attractions.js" type="text/javascript"></script>
+<script src="scripts/Attractions.js" type="text/javascript"></script>
 <!--搜索-->
 <script src="scripts/search.js" type="text/javascript"></script>
 
 <!--视图-->
 <script src="scripts/quickBtn.js" type="text/javascript"></script>
-<script src ="scripts/conversationForms.js" type="text/javascript"></script>
+<script src="scripts/conversationForms.js" type="text/javascript"></script>
 
 <!--智能体-->
 <script>

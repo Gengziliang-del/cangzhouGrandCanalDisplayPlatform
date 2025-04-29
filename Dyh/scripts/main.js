@@ -15,6 +15,10 @@ let viewer = new Cesium.Viewer("cesiumContainer", {
 });
 viewer.cesiumWidget.screenSpaceEventHandler.removeInputAction(Cesium.ScreenSpaceEventType.LEFT_DOUBLE_CLICK);
 viewer.cesiumWidget.screenSpaceEventHandler.removeInputAction(Cesium.ScreenSpaceEventType.LEFT_CLICK);
+////全局变量
+let global_road_layer = null;
+
+
 ////一些重要的标志
 let flag_fly = false;
 // 设置初始视角 - 沧州市坐标

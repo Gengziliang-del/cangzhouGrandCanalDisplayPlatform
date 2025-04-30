@@ -53,9 +53,7 @@ $('#surrounding').on('click', function () {
         )
         requestAnimationFrame(rotateCamera);
     }
-
     rotateCamera();
-
 });
 
 

@@ -221,7 +221,8 @@
 </div>
 
 <!--景点列表-->
-<div class="ball">
+<div class="ball" id = "AttractionsList">
+    <img src = "./ico/list.png" class="list-ico"></img>
     <!--    搜索按钮-->
     <div class="search-container" id="searchBox">
         <input class="search-input" id="searchInput" placeholder="搜索..." type="text">
@@ -233,34 +234,54 @@
             </svg>
         </button>
     </div>
-    <div class = "Attraction-Title">展开</div>
+<!--    <div class = "Attraction-Title">展开</div>-->
     <ul class="Attraction-Collections">
+        <hr>
         <li class="Attraction-Collection">
-            <span>区域1</span>
-            <ul class="Attractions">
+            <span class = "Attractions-title" data-collection="collection1">南湖公园</span>
+            <ul class="Attractions collection1">
                 <li >
-                    景点1
+                    南湖公园
                 </li>
                 <li >
-                    景点2
+                   沧州给水所公园
+                </li>
+            </ul>
+        </li>
+        <hr>
+        <li class="Attraction-Collection">
+            <span class = "Attractions-title" data-collection="collection2">游园</span>
+            <ul class="Attractions collection2">
+                <li >
+                    唐山园
                 </li>
                 <li >
-                    景点3
+                    廊坊园
+                </li>
+                <li >
+                    沧州园
+                </li>
+                <li >
+                    承德园
                 </li>
             </ul>
 
         </li>
+        <hr>
         <li class="Attraction-Collection">
-            <span>区域1</span>
-            <ul class="Attractions">
+            <span class = "Attractions-title" data-collection="collection3">沧州园博园</span>
+            <ul class="Attractions collection3">
                 <li >
-                    景点1
+                    百花园
                 </li>
                 <li >
-                    景点2
+                    百草园
                 </li>
                 <li >
-                    景点3
+                    百果园
+                </li>
+                <li >
+                    百草园
                 </li>
             </ul>
 
@@ -273,8 +294,8 @@
 <!--外部JS-->
 <!--页面交互设计-->
 <script src="scripts/UI.js" type="module"></script>
-<script src="library/jquery-3.7.1.slim.min.js" type="text/javascript"></script>
-
+<!--<script src="library/jquery-3.7.1.slim.min.js" type="text/javascript"></script>-->
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 <!--功能设计-->
 <!--    Cesium库js脚本-->
 <script src='../Build/Cesium/Cesium.js'></script>
@@ -285,6 +306,7 @@
 <!--=========数据=============-->
 <script src="jsonData/flightTrajectory.js"></script>
 <script src="jsonData/path.js"></script>
+<script src ="jsonData/Attractions.js"></script>
 
 
 <!--===========功能函数========-->

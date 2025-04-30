@@ -1,15 +1,18 @@
 .ball {
     position: absolute;
-    left:50px;
-    top:150px;
-    /*width: 50px;*/
-    /*height: 50px;*/
-    background-color: #ffffff;
-    border-radius: 25px;
+    left:25px;
+    top:70px;
     cursor: pointer;
     transition: all 0.3s ease;
-    /*margin: 50px;*/
     z-index: 1000;
+
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    font-family: 'Segoe UI', sans-serif;
 }
 
 .Attraction-Title{
@@ -18,15 +21,85 @@
 }
 
 .Attraction-Collections{
-    /*取消黑点*/
-    list-style-type: none;
-
+    max-height: 400px;  /* 设置最大高度 */
+    overflow-y: auto;   /* 启用垂直滚动条 */
     /*display:none;*/
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
 .Attraction-Collection{
-    padding:20px 5px 20px 5px;
-    /*background-color: #00BFFF;*/
+    padding: 12px;
+    background-color: white;
+    border-radius: 12px;
+    margin-bottom: 12px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
 }
+
+.Attraction-Collection:hover {
+    transform: translateY(-2px);
+}
+
+.Attractions-title {
+    display: block;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #007BFF;
+    margin-bottom: 10px;
+    transition: color 0.3s;
+}
+.Attractions-title:hover {
+    color: #0056b3;
+}
+
 .Attractions{
-    list-style-type: none;
+    display: none;
+    padding-left: 20px;
+    margin-top: 8px;
+    list-style-type: disc;
+}
+
+
+.Attractions li {
+    padding: 4px 0;
+    font-size: 14px;
+    color: #333;
+}
+
+.Attractions li:hover{
+    color: #0056b3;
+}
+.list-ico{
+    padding-top:5px;
+    width: 30px;
+    height: 30px;
+}
+
+/* 分隔线美化 */
+hr {
+    border: none;
+    border-top: 1px solid #e0e0e0;
+    margin: 12px 0;
+}
+
+/*===================================*/
+/*给滚动条优化*/
+#AttractionsList::-webkit-scrollbar {
+    width: 8px;
+}
+
+#AttractionsList::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 8px;
+}
+
+#AttractionsList::-webkit-scrollbar-thumb {
+    background: #bbb;
+    border-radius: 8px;
+}
+
+#AttractionsList::-webkit-scrollbar-thumb:hover {
+    background: #888;
 }

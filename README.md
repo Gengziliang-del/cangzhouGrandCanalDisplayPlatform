@@ -1,2 +1,0 @@
-# cangzhouGrandCanalDisplayPlatform
-沧州大运河展示平台

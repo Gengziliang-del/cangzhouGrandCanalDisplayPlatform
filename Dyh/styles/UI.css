@@ -83,4 +83,13 @@ body {
     display: inline-block;
 }
 
+/*折叠图标*/
+.fold-icon {
+    background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path fill='%23000000' d='M9 6l6 6-6 6'/></svg>");
+    width: 16px;
+    height: 16px;
+    background-size: cover;
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
 /*--------------------------------------------------*/

@@ -28,7 +28,7 @@ function defineTheAppearance(){
 function addShapes(){
     //生成纹理
     defineTheAppearance();
-    Cesium.GeoJsonDataSource.load("./JsonData/lake.geojson").then(function (dataSource) {
+    Cesium.GeoJsonDataSource.load("./jsonData/lake.geojson").then(function (dataSource) {
         let entities = dataSource.entities.values; // 获取所有实体
         //geojson转换为几何形状
         let geometryInstances = entities.map(entity => {

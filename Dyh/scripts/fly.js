@@ -90,7 +90,7 @@ function StartFly() {
     airplane = viewer.entities.add({
         position: flightPath.property,
         model: {
-            uri: './model/Airplane_Large_Passenger.glb',
+            uri: './model/Eurocopter_H125_-_Flying.glb',
             minimumPixelSize: 64,
             maximumScale: 100,
             heightReference: Cesium.HeightReference.NONE,

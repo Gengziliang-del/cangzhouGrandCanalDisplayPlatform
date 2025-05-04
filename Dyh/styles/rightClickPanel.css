@@ -1,24 +1,42 @@
 /* 右键菜单样式 */
 #contextMenu {
-    display: none; /* 初始隐藏 */
+    /*display: none; !* 初始隐藏 *!*/
+    /*position: absolute;*/
+    /*background: rgb(255, 255, 255);*/
+    /*color: #000000;*/
+    /*padding: 10px;*/
+    /*border-radius: 5px;*/
+    /*box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);*/
+    /*z-index: 20;*/
+
     position: absolute;
-    background: rgb(255, 255, 255);
-    color: #000000;
-    padding: 10px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    z-index: 20;
+    display: none;
+    min-width: 120px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    z-index: 1000;
+    padding: 6px 0;
+    font-family: "Segoe UI", sans-serif;
+    transition: opacity 0.2s ease;
 }
 
 /* 右键菜单项 */
 .menu-item {
-    padding: 5px 10px;
+    /*padding: 5px 10px;*/
+    /*cursor: pointer;*/
+    /*solid-color: #787878;*/
+    /*width: 150px;*/
+
+    padding: 10px 16px;
+    font-size: 14px;
+    color: #333;
     cursor: pointer;
-    solid-color: #787878;
-    width: 150px;
+    transition: background-color 0.2s ease;
 
 }
 
 .menu-item:hover {
-    background-color: rgba(194, 231, 255); /* 鼠标悬停时变蓝色 */
+    /*background-color: rgba(194, 231, 255); !* 鼠标悬停时变蓝色 *!*/
+    background-color: #f0f0f5;
 }

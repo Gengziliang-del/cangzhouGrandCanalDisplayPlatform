@@ -25,7 +25,8 @@ function POI_Add({path, DataSource_obj, image, scale = 0.7}) {
 
                 // 移除默认样式（如 marker）
                 entity.billboard = new Cesium.BillboardGraphics({
-                    image: "./ico/landmark/"+type+".png", // 自定义图标路径
+                    image: "./ico/POI/"+type+".png", // 自定义图标路径
+                    // image:image,
                     scale: scale, // 自定义图标缩放比例
                     verticalOrigin: Cesium.VerticalOrigin.BOTTOM, // 图标对齐方式
                     heightReference: Cesium.HeightReference.CLAMP_TO_GROUND // 对齐地面
@@ -42,7 +43,7 @@ $('#addPOI').on('change',function (){
     if ($(this).is(':checked')) {
        POI_Add(
            {
-               path:"./jsonData/attr3.geojson",
+               path:"./jsonData/dyh_POI.geojson",
                image:"./ico/icons8-park-32-2.png",
                scale:0.8,
                DataSource_obj:POI,

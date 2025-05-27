@@ -66,8 +66,10 @@ addLayerBtn.addEventListener('click', () => {
 const coordinatesElement = document.querySelector('.coordinates');
 const viewHeightElement = document.querySelector('.view-height');
 const scaleElement = document.querySelector('.scale');
+const attitudeElement = document.querySelector('.attitude');
 
 viewer.scene.globe.enableLighting = true;
+
 viewer.scene.postRender.addEventListener(() => {
     const camera = viewer.camera;
     const position = camera.positionCartographic;
@@ -84,6 +86,12 @@ viewer.scene.postRender.addEventListener(() => {
     // 更新比例尺（简化计算）
     const scale = Math.round(height / 100) * 100;
     scaleElement.textContent = `1:${scale}`;
+
+    // 更新相机姿态：偏航(heading)、俯仰(pitch)、滚转(roll)
+    const heading = Cesium.Math.toDegrees(camera.heading).toFixed(1);
+    const pitch = Cesium.Math.toDegrees(camera.pitch).toFixed(1);
+    const roll = Cesium.Math.toDegrees(camera.roll).toFixed(1);
+    attitudeElement.textContent = `偏航: ${heading}° 俯仰: ${pitch}° 滚转: ${roll}°`;
 });
 //-----------------------------------------------------------------//
 

@@ -1,0 +1,82 @@
+#in:hover {
+    /* Hover效果 */
+    background: linear-gradient(45deg, #6c1a14, #912f21);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3);
+    color: #faba76;
+}
+
+#in:active {
+    /* 按下效果 */
+    background: linear-gradient(45deg, #6c1a14, #8c251f);
+    transform: translateY(0);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#in {
+    padding: 15px 30px;
+    background: linear-gradient(45deg, #fdbc78, rgb(249, 183, 117));
+    border: none;
+    color: #6c1a14;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+#in a {
+    text-decoration: none; /* 去除下划线 */
+    color: inherit; /* 继承父元素的文字颜色 */
+    font-size: inherit; /* 继承父元素的字体大小 */
+    font-weight: inherit; /* 继承父元素的字体粗细 */
+}
+
+.title {
+    font-size: 72px;
+    font-weight: bold;
+    color: #fdbc78;
+    margin-bottom: 20px;
+    text-align: center;
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2), -3px -3px 5px rgba(0, 0, 0, 0.2);
+    white-space: nowrap; /* 防止标题自动换行 */
+}
+
+#cover {
+    position: absolute; /* 确保它能够使用 z-index */
+    background-image: url("../image/cover/封面.jpg");
+    background-repeat: no-repeat;
+    background-position: center center; /* 确保背景图居中 */
+    background-size: cover; /* 让背景图覆盖整个容器，保持比例 */
+    z-index: 9999999; /* 更低的 z-index */
+    width: 100%;
+    height: 100%;
+    overflow: hidden; /* 防止内容溢出 */
+}
+
+/*渐变背景*/
+.overlay {
+    position: absolute;
+    top: 50%; /* 调整为垂直居中 */
+    left: 50%; /* 调整为水平居中 */
+    transform: translate(-50%, -50%); /* 使背景居中对齐 */
+    padding: 40px 60px; /* 根据内容适当增加内边距 */
+    background: linear-gradient(135deg, rgba(108, 26, 20, 0.8), rgba(147, 50, 33, 0.8)); /* 渐变背景 */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px; /* 圆角边框 */
+    z-index: 2; /* 确保 overlay 在 cover 上面 */
+    /*overflow: auto; !* 允许溢出的内容滚动 *!*/
+}
+
+
+.content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}

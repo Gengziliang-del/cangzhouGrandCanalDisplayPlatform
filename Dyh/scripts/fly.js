@@ -18,7 +18,7 @@ $('#panel-close').on('click', function () {
         viewer.entities.remove(airplane);
         airplane = null;
     }
-    flag_fly=false;
+   flag_fly=false;
 });
 
 //飞行操控

@@ -5,7 +5,7 @@ viewer.screenSpaceEventHandler.setInputAction(function onLeftClick(movement) {
         // 输出被点击实体的属性
         console.log("Entity properties:", pickedFeature.id._properties._Describe._value);
         $('#bubblePanel').removeClass('bubbleHidden');
-        const Name = pickedFeature.id._properties._Name._value;
+        const Name = pickedFeature.id._properties._name._value;
         $('#bubblePanel-title').text(Name);
         const imgPath = "./image/" + Name + ".png"
         $('#bubblePanel-img').attr("src", imgPath);

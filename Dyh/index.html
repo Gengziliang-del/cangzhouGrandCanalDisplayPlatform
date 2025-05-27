@@ -28,8 +28,24 @@
     <link href="styles/bubblePanel.css" rel="stylesheet">
     <!--    景点列表-->
     <link href="styles/listOfAttractions.css" rel="stylesheet">
+<!--    封面-->
+    <link href="styles/cover.css" rel = "stylesheet">
+    <!-- 开场大运河区位介绍 -->
+
+    <link rel="stylesheet" href="./styles/openingRemarks.css">
+
 </head>
 <body>
+<div id="cover">
+    <div class="overlay">
+        <div class="content">
+            <div class="title">
+                运河智境互动拾光
+            </div>
+            <button id="in" onclick="enterTheScene()">点击进入</button>
+        </div>
+    </div>
+</div>
 <!-- 顶部导航栏 -->
 <nav class="top-nav">
     <img class="logo" src="ico/logo.png"/>
@@ -97,7 +113,7 @@
         <div class="layer-item">
             <span>实景三维</span>
             <label class="switch">
-                <input id="add3DData" type="checkbox"/>
+                <input id="add3DData" checked type="checkbox"/>
                 <span class="slider"></span>
             </label>
         </div>
@@ -137,23 +153,25 @@
         <i class="icon scale-icon"></i>
         <span class="scale">1:10000</span>
     </div>
+    <div class="status-item">
+        <i class="icon attitude-icon"></i>
+        <span class="attitude">偏航: 0° 俯仰: 0° 滚转: 0°</span>
+    </div>
 </div>
 
 
 <!--顶部导航栏弹出菜单-->
 <div class="topMenu-panel model1-menu">
-    <div class="menu-item" id="topJump">地理位置</div>
-    <div class="menu-item">A功能2</div>
-    <div class="menu-item">A功能3</div>
-    <div class="menu-item">A其他</div>
+    <div class="menu-item" >大运河</div>
+    <div class="menu-item">沧州</div>
 </div>
 
 <div class="topMenu-panel model2-menu">
-    <div class="menu-item">运河公园</div>
-    <hr style="color: grey">
-    <div class="menu-item">B功能2</div>
-    <div class="menu-item">B功能3</div>
-    <div class="menu-item">B其他</div>
+    <div class="menu-item">沧州园博园</div>
+    <div class="menu-item">南湖公园</div>
+    <div class="menu-item">沧州给水所公园</div>
+    <div class="menu-item">南川楼</div>
+    <div class="menu-item">朗吟楼</div>
 </div>
 
 
@@ -293,6 +311,9 @@
 </div>
 
 
+
+
+
 </body>
 <!--外部JS-->
 <!--页面交互设计-->
@@ -316,6 +337,11 @@
 
 <!--入口-->
 <script src="scripts/main.js"></script>
+
+<!--封面-->
+<script src="scripts/cover.js"></script>
+<script src="scripts/TopNav.js"></script>
+
 <!--三维实景-->
 <script src="scripts/live3D.js"></script>
 <!--&lt;!&ndash;右键菜单&ndash;&gt;-->
@@ -350,13 +376,13 @@
 <!--智能体-->
 <script>
     window.difyChatbotConfig = {
-        token: 'L51PiXQNx7qWVHqh',
+        token: '6ygJFIFE8c0qUOyZ',
         baseUrl: 'http://localhost:8081'
     }
 </script>
 <script
         defer
-        id="L51PiXQNx7qWVHqh"
+        id="6ygJFIFE8c0qUOyZ"
         src="http://localhost:8081/embed.min.js">
 </script>
 

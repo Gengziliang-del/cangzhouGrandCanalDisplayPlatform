@@ -11,25 +11,29 @@ let viewer = new Cesium.Viewer("cesiumContainer", {
     timeline: false,//时间轴
     fullscreenButton: false,//全屏按钮
     //其他参数
-    // terrainProvider:Cesium.createWorldTerrain()
+    terrainProvider:Cesium.createWorldTerrain()
 });
 viewer.cesiumWidget.screenSpaceEventHandler.removeInputAction(Cesium.ScreenSpaceEventType.LEFT_DOUBLE_CLICK);
 viewer.cesiumWidget.screenSpaceEventHandler.removeInputAction(Cesium.ScreenSpaceEventType.LEFT_CLICK);
 ////全局变量
-
-
+//沧州坐标
+const czLon = 116.8482
+const czLat = 38.3117
+// 定义一个全局变量
+//开场加载的大运河
+let geoJsonDataSource;
 
 ////一些重要的标志
 let flag_fly = false;
-// 设置初始视角 - 沧州市坐标
-viewer.camera.setView({
-    destination: Cesium.Cartesian3.fromDegrees(116.8491, 38.2397, 12000),
-    orientation: {
-        heading: Cesium.Math.toRadians(0.0),
-        pitch: Cesium.Math.toRadians(-60.0),
-        roll: 0.0
-    }
-});
+// // 设置初始视角 - 沧州市坐标
+// viewer.camera.setView({
+//     destination: Cesium.Cartesian3.fromDegrees(116.8491, 38.2397, 12000),
+//     orientation: {
+//         heading: Cesium.Math.toRadians(0.0),
+//         pitch: Cesium.Math.toRadians(-60.0),
+//         roll: 0.0
+//     }
+// });
 
 
 
